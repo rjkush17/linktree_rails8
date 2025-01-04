@@ -1,0 +1,39 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: Rishabh@17
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: mydatabase_development
+  username: postgres
+  password: Rishabh@17
+
+test:
+  <<: *default
+  database: mydatabase_test
+  username: postgres
+  password: Rishabh@17
+
+production:
+  primary: &primary_production
+    <<: *default
+    database: linktree_rails_production
+    username: linktree_rails
+    password: <%= ENV["LINKTREE_RAILS_DATABASE_PASSWORD"] %>
+  cache:
+    <<: *primary_production
+    database: linktree_rails_production_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_production
+    database: linktree_rails_production_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_production
+    database: linktree_rails_production_cable
+    migrations_paths: db/cable_migrate
