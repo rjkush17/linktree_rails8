@@ -1,5 +1,5 @@
-class TreeController < ApplicationController
-  before action :set_tree, only: %i[show edit update destroy]
+class TreesController < ApplicationController
+  before_action :set_tree, only: %i[show edit update destroy]
 
   def index
     @trees = Tree.all
@@ -9,6 +9,7 @@ class TreeController < ApplicationController
   end
 
   def new
+    @tree = Tree.new
   end
 
 
@@ -17,7 +18,8 @@ class TreeController < ApplicationController
     if @tree.save
       redirect_to @tree, notice: "Tree created succesfully"
     else
-      render :new
+      puts @tree.errors.full_messages 
+      render :new, status: :unprocessable_entity
     end
   end
 

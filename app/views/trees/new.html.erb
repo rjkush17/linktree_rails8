@@ -1,0 +1,32 @@
+<h1>Create new tree</h1>
+<br>
+<br>
+<%= form_with model: @tree, url: trees_path, local: true, data: { turbo: false } do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :facebook %>
+    <%= form.text_field :facebook %>
+  </div>
+  <div>
+    <%= form.label :x %>
+    <%= form.text_field :x %>
+  </div>
+  <div>
+    <%= form.label :instagram %>
+    <%= form.text_field :instagram %>
+  </div>
+  <div>
+    <%= form.label :website %>
+    <%= form.text_field :website %>
+  </div>
+  <div>
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

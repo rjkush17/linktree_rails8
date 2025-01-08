@@ -1,0 +1,35 @@
+<h1> All Trees  </h1>
+<%= link_to 'New tree', new_tree_path, class: 'underline bg-red-200'%>
+<br>
+<br>
+<ul>
+    <% @trees.each do |tree|  %>
+    <li>
+        <%= tree.name %>
+       
+    </li>
+     <li>
+        <%= tree.facebook %>
+       
+    </li>
+     <li>
+        <%= tree.x %>
+       
+    </li>
+     <li>
+        <%= tree.instagram %>
+       
+    </li>
+     <li>
+        <%= tree.website %>
+       
+    </li>
+     <li>
+        <%= tree.user_id %>
+       
+    </li>
+    <br>
+    <br>
+    <br>
+    <% end %>
+</ul>
