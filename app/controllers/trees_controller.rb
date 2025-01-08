@@ -24,6 +24,7 @@ class TreesController < ApplicationController
   end
 
   def edit
+    @tree = Tree.find(params[:id])
   end
 
   def update
