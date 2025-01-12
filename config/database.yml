@@ -23,8 +23,8 @@ production:
   primary: &primary_production
     <<: *default
     database: linktree_rails_production
-    username: linktree_rails
-    password: <%= ENV["LINKTREE_RAILS_DATABASE_PASSWORD"] %>
+    username: postgres
+    password: Rishabh@17
   cache:
     <<: *primary_production
     database: linktree_rails_production_cache
