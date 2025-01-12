@@ -1,20 +1,20 @@
-  <nav class="bg-gray-500 text-white px-6 py-4">
+  <nav class="text-custompurple font-semibold px-6 py-4 drop-shadow-2xl">
   <div class="container mx-auto flex items-center justify-between">
     <!-- Logo -->
-    <div class="text-2xl font-bold">
+    <div class="text-3xl font-bold">
       <a href="#">LinkNest</a>
     </div>
     <!-- Pages -->
-    <ul class="flex space-x-6">
-<%= link_to 'Home', root_path, class: "hover:text-gray-400" %>
+    <ul class="flex text-lg space-x-6 items-center">
+      <%= link_to 'Home', root_path, class: "hover:text-gray-400" %>
       <% if !user_signed_in? %>
         <%= link_to 'Login', new_user_session_path, class: "hover:text-gray-400" %>
-        <%= link_to 'Register', new_user_registration_path, class: "hover:text-grey-400" %>
+        <%= link_to 'Register', new_user_registration_path, class: "hover:text-gray-400" %>
       <% else %>
         <%= link_to 'My Trees', trees_path, class: "hover:text-grey-400" %>
         <%= link_to 'Create New', new_tree_path, class: "New Tree" %>
-                <%= button_to 'Logout', destroy_user_session_path, class: "hover:text-grey-400", method: :delete %>
-
+        <%= button_to 'Logout', destroy_user_session_path, class: "btn-primary", method: :delete %>
       <% end %>
-    </div>
-  </nav>
+    </ul>
+  </div>
+</nav>
