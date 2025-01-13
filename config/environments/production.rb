@@ -87,17 +87,4 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-  #
-  # Use Uglifier for JS compression (optional)
-config.assets.js_compressor = :uglifier
-
-# Disable runtime asset compilation (improves performance)
-config.assets.compile = false
-
-# Enable asset digests for cache busting
-config.assets.digest = true
-
-# Serve static files (only if you're not using a CDN or reverse proxy to serve them)
-config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-
 end
