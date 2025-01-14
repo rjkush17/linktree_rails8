@@ -14,9 +14,7 @@ services:
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: linktree_rails
-          property: connectionString
+        value: postgresql://linktree_rails:sOi3SPn1WLLDNSYuuKBGtz7Wd0SmR9Jb@dpg-cu26rctds78s738f8io0-a/linktree_rails
       - key: RAILS_MASTER_KEY
         value: 1f8bbfb2f7bf1f5c8b6938781dc24bfe
       - key: WEB_CONCURRENCY
