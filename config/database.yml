@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
   username: postgres
   password: Rishabh@17
   host: localhost
@@ -22,7 +22,3 @@ test:
 production:
     <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-
-  # Add this for Action Cable
-  cable:
-    url: <%= ENV.fetch('ACTION_CABLE_DATABASE_URL', ENV['DATABASE_URL']) %>
