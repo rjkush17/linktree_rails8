@@ -66,4 +66,5 @@ end
 
 gem 'htmlbeautifier'
 gem "devise", "~> 4.9"
+gem 'dotenv', '~> 3.1', '>= 3.1.7'
 
