@@ -20,4 +20,9 @@ test:
   password: Rishabh@17
 
 production:
-    url: <%= ENV['DATABASE_URL'] %>
+    <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+
+  # Add this for Action Cable
+  cable:
+    url: <%= ENV.fetch('ACTION_CABLE_DATABASE_URL', ENV['DATABASE_URL']) %>
