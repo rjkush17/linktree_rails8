@@ -6,4 +6,11 @@
   .btn-primary {
     @apply bg-custompurple rounded-lg text-white text-xl font-semibold py-3 px-2 hover:bg-white hover:text-custompurple w-fit
   }
+
+  .input-primary{
+    @apply w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-black rounded-md px-3 py-1.5 transition duration-300 focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow
+  }
+  .label-primary{
+    @apply text-custompurple text-lg
+  }
 }
