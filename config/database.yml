@@ -4,21 +4,17 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
 
 development:
   <<: *default
   database: mydatabase_development
-  username: postgres
-  password: Rishabh@17
 
 test:
   <<: *default
   database: mydatabase_test
-  username: postgres
-  password: Rishabh@17
 
 production:
   <<: *default
   database: mydatabase_production
-  username: postgres
-  password: Rishabh@17
